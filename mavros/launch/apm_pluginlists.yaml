@@ -14,5 +14,8 @@
       - vision_speed_estimate
       - wheel_odometry
 
-    # plugin_allowlist:
+    plugin_allowlist:
     #   - 'sys_*'
+      - vision*
+      - local*
+      - imu

@@ -62,12 +62,15 @@
 # imu_pub
 /**/imu:
   ros__parameters:
-    frame_id: "base_link"
+    frame_id: "imu_link"
     # need find actual values
     linear_acceleration_stdev: 0.0003
     angular_velocity_stdev: 0.0003490659  # 0.02 degrees
     orientation_stdev: 1.0
     magnetic_stdev: 0.0
+    tf.rate_limit: 50.0
+    raw:
+      publish: true
 
 # local_position
 /**/local_position:
@@ -248,7 +251,8 @@
   ros__parameters:
     tf.listen: false           # enable tf listener (disable topic subscribers)
     tf.frame_id: "map"
-    tf.child_frame_id: "vision_estimate"
+    tf.child_frame_id: "base_link"
+    #tf.child_frame_id: "vision_estimate"
     tf.rate_limit: 10.0
 
 # vision_speed_estimate
